@@ -3,6 +3,7 @@
     "name": "com.phonegap.plugins.binaryfilewriter",
     "cordova_name": "BinaryFileWriter",
     "description": "Binary File Writer for Android",
+	"author":"Antonio Hernandez <ahernandez@emergya.com>",
     "license": "MIT",
     "repo": "https://github.com/ngorror/BinaryFileWriter",
     "issue": "https://github.com/ngorror/BinaryFileWriter/issues",
