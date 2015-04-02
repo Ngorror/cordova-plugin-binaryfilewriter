@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.phonegap.plugins.binaryfilewritter"
+    version="2.0.0">
+
+    <name>BinaryFileWriter</name>
+    <description>BinaryFileWriter for android</description>
+    <license>MIT</license>
+
+    <repo>https://github.com/ngorror/BinaryFileWriter</repo>
+    <issue>https://github.com/ngorror/BinaryFileWriter/issues</issue>
+    
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>    
+
+    <js-module src="www/binaryfilewriter.js" name="BinaryFileWriter">
+        <clobbers target="cordova.plugins.binaryfilewriter" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <source-file src="src/android/com/phonegap/plugins/binaryfilewriter/BinaryFileWriter.java" target-dir="src/com/phonegap/plugins/binaryfilewriter" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BinaryFileWriter">
+                <param name="android-package" value="com.phonegap.plugins.binaryfilewriter.BinaryFileWriter" />
+            </feature>
+        </config-file>
+    </platform>
+
+</plugin>
