@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.phonegap.plugins.binaryfilewriter"
-    version="2.0.1">
+    version="2.0.2">
 
     <name>BinaryFileWriter</name>
     <description>BinaryFileWriter for android</description>
@@ -21,7 +21,7 @@
     <!-- android -->
     <platform name="android">
 
-        <source-file src="src/android/com/phonegap/plugins/binaryfilewriter/BinaryFileWriter.java" target-dir="src/com/phonegap/plugins/binaryfilewriter" />
+        <source-file src="src/BinaryFileWriter.java" target-dir="src/com/phonegap/plugins/binaryfilewriter" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BinaryFileWriter">
