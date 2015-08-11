@@ -1,6 +1,6 @@
 {
-    "name": "cordova-binaryfilewriter",
-    "version": "2.0.4",
+    "name": "cordova-plugin-binaryfilewriter",
+    "version": "2.0.5",
     "description": "BinaryFileWriter for android",
     "cordova": {
         "id": "com.phonegap.plugins.binaryfilewriter.BinaryFileWriter",
@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ngorror/BinaryFileWriter.git"
+        "url": "https://github.com/ngorror/cordova-plugin-binaryfilewriter.git"
     },
     "keywords": [
         "cordova",
@@ -25,9 +25,9 @@
     "author": "Various",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ngorror/BinaryFileWriter/issues"
+        "url": "https://github.com/ngorror/cordova-plugin-binaryfilewriter/issues"
     },
-    "homepage": "https://github.com/ngorror/BinaryFileWriter",
+    "homepage": "https://github.com/ngorror/cordova-plugin-binaryfilewriter",
     "platforms": [
         "android"
     ],
