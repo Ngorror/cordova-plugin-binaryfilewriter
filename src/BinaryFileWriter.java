@@ -12,7 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.apache.cordova.FileUtils;
+//import org.apache.cordova.FileUtils;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.nio.channels.FileChannel;
@@ -28,26 +28,36 @@ import org.apache.cordova.PluginResult;
 public class BinaryFileWriter extends CordovaPlugin {
 
 	@Override
-	public PluginResult execute(String action, JSONArray args, CallbackContext callbackContext) {
-
-        PluginResult.Status status = PluginResult.Status.OK;
-        String result = "";
+	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
         try {
 
             if (action.equals("writeBinaryArray")) {
                 long fileSize = this.writeBinaryArray(args.getString(0), args.getJSONArray(1), args.getInt(2));
-                return new PluginResult(status, fileSize);
+				callbackContext.success();
+				return true;
+            } else {
+                callbackContext.error("MISSING_writeBinaryArray");
+                PluginResult r = new PluginResult(PluginResult.Status.ERROR);
+                callbackContext.sendPluginResult(r);
+                return false;
             }
-
-            return new PluginResult(status, result);
-
+            
         } catch (FileNotFoundException e) {
-            return new PluginResult(PluginResult.Status.ERROR, FileUtils.NOT_FOUND_ERR);
+			callbackContext.error("NOT_FOUND_ERR");
+			PluginResult r = new PluginResult(PluginResult.Status.ERROR);
+			callbackContext.sendPluginResult(r);
+			return false;
         } catch (JSONException e) {
-            return new PluginResult(PluginResult.Status.ERROR, FileUtils.NO_MODIFICATION_ALLOWED_ERR);
+			callbackContext.error("NO_MODIFICATION_ALLOWED_ERR");
+			PluginResult r = new PluginResult(PluginResult.Status.ERROR);
+			callbackContext.sendPluginResult(r);
+			return false;
         } catch (IOException e) {
-            return new PluginResult(PluginResult.Status.ERROR, FileUtils.INVALID_MODIFICATION_ERR);
+			callbackContext.error("INVALID_MODIFICATION_ERR");
+			PluginResult r = new PluginResult(PluginResult.Status.ERROR);
+			callbackContext.sendPluginResult(r);
+			return false;
         }
 	}
 
